@@ -17,7 +17,7 @@ const namesFooter = ref([
    'test 3',
    'test 3'
 ]);
-console.log(calculate("2/2"));
+calculate("2/2");
 provide('namesFooter', namesFooter);
 </script>
 

@@ -8,7 +8,7 @@ import {
 
 export function calculate(value) {
 
- console.log(calculateBasicOperation("/", "12/2"));
+ calculateBasicOperation("/", "12/2");
 
  return true;
 /*
