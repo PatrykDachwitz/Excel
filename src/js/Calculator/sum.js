@@ -1,22 +1,34 @@
-function sum(value) {
-    const podzielone = value.split(";");
-    let wynik = 0;
+import {cellCompartment, getDetailCell, isCell, summaryBetweenCell} from "@/js/Calculator/cellCompartment";
+import {selectCell} from "@/js/selectCell";
+import {checkIsInt} from "@/js/Calculator/primaryFunction";
 
-    podzielone.forEach(element => {
-        let tmpElement = parseInt(element);
-        if (tmpElement == element) {
-            wynik += tmpElement;
+
+
+export function isCompartment(value) {
+    return value.indexOf(":") >= 0
+}
+
+export function sum(value) {
+    const values = value.split(";");
+    let result = 0;
+    let resultError = false;
+    values.forEach(element => {
+        if (checkIsInt(element)) {
+            result += parseInt(element);
         } else {
-            if (element.indexOf(":") >= 0) {
-                let elementDzielenieprzez = element.split(":");
+            if (isCompartment(element)) {
+                const cells = cellCompartment(element);
+                result += summaryBetweenCell(cells);
+            } else if (isCell(element)) {
+                const cellDetail = getDetailCell(element);
+                result += parseInt(selectCell(cellDetail.row, cellDetail.column).input.value);
             } else {
-                let tmpElement = parseInt(element);
-                wynik += tmpElement;
+                resultError = true
             }
         }
 
     })
 
-    console.info(wynik);
-
+    if (!resultError) return result;
+    else return NaN;
 }

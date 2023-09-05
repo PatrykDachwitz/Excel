@@ -20,7 +20,7 @@ const test = "321;23;1A;7H:1A";
 
 
 
-console.log(calculate("sum(123;312)"));
+
 
 
 

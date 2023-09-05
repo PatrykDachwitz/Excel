@@ -3,6 +3,7 @@ import FooterInput from "@/components/FooterInput.vue";
 import FooterInputAdd from "@/components/FooterInputAdd.vue";
 import { ref, provide } from "vue";
 import IconShifting from "@/components/IconShifting.vue";
+import {calculate} from "@/js/Calculator/calcualte";
 
 const namesFooter = ref([
    'test 1',
@@ -16,7 +17,7 @@ const namesFooter = ref([
    'test 3',
    'test 3'
 ]);
-
+console.log(calculate("2/2"));
 provide('namesFooter', namesFooter);
 </script>
 

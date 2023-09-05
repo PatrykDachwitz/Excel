@@ -1,6 +1,6 @@
 import {createInfoFunction, disabledInfoFunction} from "@/js/createInfoFunction";
 import {selectCell} from "@/js/selectCell";
-import {inArray} from "@/js/changeValueCell";
+import {inArray} from "@/js/Calculator/primaryFunction";
 import {changeBackgroundColor} from "@/js/changeBackgroundColorRowColumn";
 export function validationsCellKeyUp(row, column) {
     const selectedCell = selectCell(row, column);

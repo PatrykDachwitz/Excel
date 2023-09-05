@@ -1,4 +1,9 @@
-import { inArray, verificationFunctionOrValue} from "@/js/Calculator/primaryFunction";
+import {
+    getNamesFunction,
+    inArray,
+    prepareNameFunction,
+    verificationFunctionOrValue
+} from "@/js/Calculator/primaryFunction";
 import { calculate as useFunctionExcel} from "@/js/Calculator/calcualte";
 
 function verificationCloseFunction(value) {

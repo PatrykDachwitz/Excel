@@ -5,12 +5,10 @@ export function valueOnCell(row, column) {
 
     return parseInt(valueInput);
 }
-export function isStandardArithmeticOperations() {
-    const standardArithmetics = [
-        '/',
-        '-',
-        '+'
-    ]
+export function checkIsInt(value) {
+    const testValue = parseInt(value);
+
+    return testValue == value;
 }
 
 export function getNamesFunction() {
@@ -18,6 +16,8 @@ export function getNamesFunction() {
         "=sum"
     ];
 }
+
+
 
 export function prepareNameFunction(value) {
 
@@ -34,6 +34,12 @@ export function valueBetweenBracket(value) {
     separate = separate.join(")");
 
     return separate;
+}
+export function isFunctionExcel(value) {
+    return false;
+}
+export function isSetBracket(value) {
+    return value.indexOf("(") || value.indexOf(")");
 }
 
 export function inArray(value) {

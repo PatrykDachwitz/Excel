@@ -1,6 +1,7 @@
 import {getNameColumn} from "@/js/updateSpreadSheet";
+import {selectCell} from "@/js/selectCell";
 
-function getDetailCell(cell) {
+export function getDetailCell(cell) {
 
     let rowName = parseInt(cell);
     let columnName = cell.split(rowName)[1]
@@ -10,6 +11,14 @@ function getDetailCell(cell) {
         column: columnName
     };
 }
+
+export function isCell(cell) {
+    let rowName = parseInt(cell);
+    let columnName = cell.split(rowName)[1]
+
+    return `${rowName}${columnName}` == cell;
+}
+
 function getColumnsNameOnCompartment(firstColumn, secondColumn) {
     const nameColumn = getNameColumn();
     const firstName = nameColumn.indexOf(firstColumn);
@@ -45,7 +54,6 @@ function calculateCellInRow(column, rowFirst, rowSecond) {
         }
     } else if(rowFirst < rowSecond) {
         for (let i = rowFirst; i <= rowSecond; i++) {
-            console.log('test')
             finalCells.push({
                 row: i,
                 column: column
@@ -92,13 +100,22 @@ export function cellCompartment(cells) {
     } else {
         const availableColumnName = getColumnsNameOnCompartment(firstCell.column, secondCell.column);
 
-        console.log(availableColumnName)
         availableColumnName.forEach((nameColumn) => {
             let columnOnCompartment = calculateCellInRow(nameColumn, firstCell.row, secondCell.row);
-            console.log(columnOnCompartment)
             finalCells = finalCells.concat(columnOnCompartment);
         });
     }
 
     return finalCells;
+}
+
+export function summaryBetweenCell(cells) {
+    let resultSum = 0;
+
+    cells.forEach(cell => {
+        let selectedCell = parseInt(selectCell(cell.row, cell.column).input.value);
+        resultSum += selectedCell;
+    })
+
+    return resultSum;
 }
