@@ -1,0 +1,43 @@
+{
+  "name": "Test nazwa",
+  "idExcel": "waadas1d",
+  "spreadsheets": [
+     {
+       "name": "test",
+       "idSheet": "uniqid",
+       "details": {
+         "countRow": 5,
+         "countColumn": 6,
+         "columnsValue": [
+           [
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}]
+           ],
+           [
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}]
+           ],
+           [
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}],
+             [{"valuePure": "=sum123", "valueConvert": "=sum123"}]
+           ]
+         ]
+       }
+      },
+    {
+
+    }
+  ]
+}

@@ -1,47 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref, provide } from "vue";
+import Spreadsheet from "@/components/Spreadsheet.vue";
+import Footer from "@/components/Footer.vue";
+import FunctionCell from "@/components/FunctionCell.vue";
+import { useFetch } from "@/js/useFetch";
+import Excel from "@/components/Excel.vue";
+import {selectCell} from "@/js/selectCell";
+import {getNameColumn} from "@/js/updateSpreadSheet";
+import {calculate} from "@/js/Calculator/calcualte";
+const result = ref(null)
+const url = ref('http://localhost:5173/spreadsheetTEamplate.json');
+
+
+const test = "321;23;1A;7H:1A";
+
+
+
+
+
+
+
+console.log(calculate("sum(123;312)"));
+
+
+
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <FunctionCell
+   class="d-none"
+  />
+  <excel />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
